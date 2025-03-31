@@ -1,23 +1,24 @@
+using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
+using Unity.Behavior;
 
 public class EnemyFSM : MonoBehaviour
 {
-	private	Transform		target;
-	private	NavMeshAgent	navMeshAgent;
+    private Transform target;
+    private NavMeshAgent navMeshAgent;
+    private BehaviorGraphAgent behaviorAgent;
 
-	public void Setup(Transform target)
-	{
-		this.target = target;
+    public void Setup(Transform target, GameObject[] wayPoints)
+    {
+        this.target = target;
 
-		navMeshAgent = GetComponent<NavMeshAgent>();
-		navMeshAgent.updateRotation = false;
-		navMeshAgent.updateUpAxis = false;
-	}
+        navMeshAgent = GetComponent<NavMeshAgent>();
+        behaviorAgent = GetComponent<BehaviorGraphAgent>();
+        navMeshAgent.updateRotation = false;
+        navMeshAgent.updateUpAxis = false;
 
-	private void Update()
-	{
-		navMeshAgent.SetDestination(target.position);
-	}
+        behaviorAgent.SetVariableValue("PatrolPoints", wayPoints.ToList());
+    }
 }
 

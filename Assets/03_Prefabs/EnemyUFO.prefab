@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2338294196762671614}
   - component: {fileID: -7551946630194195217}
   - component: {fileID: 7275210978428785776}
+  - component: {fileID: -8472471469854253205}
   m_Layer: 0
   m_Name: EnemyUFO
   m_TagString: Untagged
@@ -151,3 +152,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c79081d12f089b45b0a904a6485f3a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-8472471469854253205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7730051641173010406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0038c16c34866b4f9e25c9c0dc0f7e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Graph: {fileID: 0}
+  m_BlackboardVariableOverridesList: []
+  m_IsInitialised: 0
+  m_IsStarted: 0
+  references:
+    version: 2
+    RefIds: []

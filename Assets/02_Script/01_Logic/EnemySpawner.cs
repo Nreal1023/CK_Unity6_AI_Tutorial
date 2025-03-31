@@ -16,6 +16,14 @@ public class EnemySpawner : MonoBehaviour
     private Vector3 offset = new Vector3(0.5f, 0.5f, 0);
     private List<Vector3> possibleTiles = new List<Vector3>();
 
+    [System.Serializable]
+    private struct WayPointData
+    {
+        public GameObject[] wayPoints;
+    }
+    [SerializeField]
+    private WayPointData[] wayPointData;
+
     private void Awake()
     {
         // Tilemap의 Bounds 재설정 (맵을 수정했을 때 Bounds가 변경되지 않는 문제 해결)
@@ -27,8 +35,9 @@ public class EnemySpawner : MonoBehaviour
         for (int i = 0; i < enemyCount; ++i)
         {
             int index = Random.Range(0, possibleTiles.Count);
+            int wayIndex = Random.Range(0, wayPointData.Length);
             GameObject clone = Instantiate(enemyPrefab, possibleTiles[index], Quaternion.identity, transform);
-            clone.GetComponent<EnemyFSM>().Setup(target);
+            clone.GetComponent<EnemyFSM>().Setup(target, wayPointData[wayIndex].wayPoints);
         }
     }
 
