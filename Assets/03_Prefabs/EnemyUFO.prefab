@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4685720841494887510}
   - component: {fileID: 2338294196762671614}
   - component: {fileID: -7551946630194195217}
-  - component: {fileID: -5740094620438363559}
+  - component: {fileID: 7275210978428785776}
   m_Layer: 0
   m_Name: EnemyUFO
   m_TagString: Untagged
@@ -139,7 +139,7 @@ NavMeshAgent:
   m_BaseOffset: 0.455
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &-5740094620438363559
+--- !u!114 &7275210978428785776
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
