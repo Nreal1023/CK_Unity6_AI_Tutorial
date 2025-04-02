@@ -168,6 +168,9 @@ MonoBehaviour:
   m_BlackboardVariableOverridesList:
   - rid: 5661049637965660509
   - rid: 5661049637965660510
+  - rid: 7471046320766845311
+  - rid: 7471046320766845312
+  - rid: 7471046320766845313
   m_IsInitialised: 0
   m_IsStarted: 0
   references:
@@ -189,3 +192,27 @@ MonoBehaviour:
           m_Value1: 6869282983794470311
         Name: PatrolPoints
         m_Value: []
+    - rid: 7471046320766845311
+      type: {class: 'BlackboardVariable`1[[System.Single, mscorlib]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 13133838067481542603
+          m_Value1: 14713990971759865980
+        Name: attackDistance
+        m_Value: 4
+    - rid: 7471046320766845312
+      type: {class: 'BlackboardVariable`1[[System.Single, mscorlib]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 14439746028370592358
+          m_Value1: 6717185840652844843
+        Name: chaseDistance
+        m_Value: 6
+    - rid: 7471046320766845313
+      type: {class: 'BlackboardVariable`1[[System.Single, mscorlib]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 14166856600931432420
+          m_Value1: 3737250404914151552
+        Name: falloutDistance
+        m_Value: 10
