@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1075256567370009134
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5640711126370455216}
+  m_Layer: 0
+  m_Name: RaserSpawnPont
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5640711126370455216
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1075256567370009134}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6876173836054149647}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7730051641173010406
 GameObject:
   m_ObjectHideFlags: 0
@@ -14,6 +45,8 @@ GameObject:
   - component: {fileID: -7551946630194195217}
   - component: {fileID: 7275210978428785776}
   - component: {fileID: -8472471469854253205}
+  - component: {fileID: -7144881359682485640}
+  - component: {fileID: 4243122285165318235}
   m_Layer: 0
   m_Name: EnemyUFO
   m_TagString: Untagged
@@ -33,7 +66,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 1.86, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 5640711126370455216}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4685720841494887510
@@ -152,6 +186,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c79081d12f089b45b0a904a6485f3a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cooldowmTime: 2
+  damage: 10
 --- !u!114 &-8472471469854253205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,6 +207,7 @@ MonoBehaviour:
   - rid: 7471046320766845311
   - rid: 7471046320766845312
   - rid: 7471046320766845313
+  - rid: 7471046321576608120
   m_IsInitialised: 0
   m_IsStarted: 0
   references:
@@ -216,3 +253,61 @@ MonoBehaviour:
           m_Value1: 3737250404914151552
         Name: falloutDistance
         m_Value: 10
+    - rid: 7471046321576608120
+      type: {class: 'BlackboardVariable`1[[WeaponBase, Assembly-CSharp]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 9340514059034045903
+          m_Value1: 15014570226872784509
+        Name: currentWeapon
+        m_Value: {fileID: -7144881359682485640}
+--- !u!114 &-7144881359682485640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7730051641173010406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21c52c6b36d86524193fa01a9d6a5107, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 4291018258773230769, guid: bf9a75fe1a347b642997a8a48f5f599c, type: 3}
+  projectileSpawnPoint: {fileID: 5640711126370455216}
+--- !u!58 &4243122285165318235
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7730051641173010406}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 0.455
